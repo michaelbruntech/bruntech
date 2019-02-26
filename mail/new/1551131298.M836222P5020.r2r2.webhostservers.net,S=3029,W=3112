@@ -1,0 +1,83 @@
+Return-Path: <>
+Delivered-To: bruntnet@r2r2.webhostservers.net
+Received: from r2r2.webhostservers.net
+	by r2r2.webhostservers.net with LMTP
+	id jGs4K6JidFycEwAAh/9zRQ
+	(envelope-from <>)
+	for <bruntnet@r2r2.webhostservers.net>; Tue, 26 Feb 2019 08:48:18 +1100
+Return-path: <>
+Envelope-to: bruntnet@r2r2.webhostservers.net
+Delivery-date: Tue, 26 Feb 2019 08:48:18 +1100
+Received: from mailnull by r2r2.webhostservers.net with local (Exim 4.91)
+	id 1gyO6k-0001Ki-L3
+	for bruntnet@r2r2.webhostservers.net; Tue, 26 Feb 2019 08:48:18 +1100
+X-Failed-Recipients: walter@bruntech.net.au
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@r2r2.webhostservers.net>
+To: bruntnet@r2r2.webhostservers.net
+Content-Type: multipart/report; report-type=delivery-status; boundary=1551131298-eximdsn-2031761356
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1gyO6k-0001Ki-L3@r2r2.webhostservers.net>
+Date: Tue, 26 Feb 2019 08:48:18 +1100
+
+--1551131298-eximdsn-2031761356
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  walter@bruntech.net.au
+    No Such User Here
+
+--1551131298-eximdsn-2031761356
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; r2r2.webhostservers.net
+
+Action: failed
+Final-Recipient: rfc822;walter@bruntech.net.au
+Status: 5.0.0
+
+--1551131298-eximdsn-2031761356
+Content-type: message/rfc822
+
+Return-path: <bruntnet@r2r2.webhostservers.net>
+Received: from bruntnet by r2r2.webhostservers.net with local (Exim 4.91)
+	(envelope-from <bruntnet@r2r2.webhostservers.net>)
+	id 1gyO6k-0001Kb-JU
+	for walter@bruntech.net.au; Tue, 26 Feb 2019 08:48:18 +1100
+To: walter@bruntech.net.au
+Subject: =?UTF-8?B?TmV3IEluc3RhbGxhdGlvbiBvZiBXb3JkUHJlc3M=?=
+X-PHP-Script: 13.54.216.146/usr/local/cpanel/whostmgr/docroot/cgi/softaculous/enduser/index.live.php for 1.42.254.142
+X-PHP-Originating-Script: 0:mail_functions.php
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+From: Softaculous <walter@bruntech.com.au>
+Reply-To: walter@bruntech.com.au
+X-Mailer: PHP/7.2.7
+Message-Id: <E1gyO6k-0001Kb-JU@r2r2.webhostservers.net>
+Date: Tue, 26 Feb 2019 08:48:18 +1100
+
+A new installation of WordPress 5.1 has been completed. The details of the installation are shown below:
+Path : /home/bruntnet/public_html
+URL : https://bruntech.net.au
+Admin URL : https://bruntech.net.au/wp-admin/
+Admin Username : Administrad0r
+Admin Password : ********
+Admin Email: walter@bruntech.com.au
+MySQL Database : bruntnet_wpbn
+MySQL DB User : bruntnet_wpbn
+MySQL DB Host : localhost
+MySQL DB Password : ********
+Update Notification : Enabled
+Auto Upgrade : Disabled
+Automated Backups : Disabled
+Time of Installation : February 25, 2019, 9:48 pm
+
+If you wish to unsubscribe from such emails, go to your Control Panel -> Softaculous -> Email Settings
+
+
+--1551131298-eximdsn-2031761356--

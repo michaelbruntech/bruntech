@@ -1,0 +1,52 @@
+Return-path: <>
+Envelope-to: bruntnet@c2s4-3m-mel.hosting-services.net.au
+Delivery-date: Tue, 29 Jul 2014 18:06:52 +1000
+Received: from mailnull by c2s4-3m-mel.hosting-services.net.au with local (Exim 4.82)
+	id 1XC2Qu-002U5q-Rb
+	for bruntnet@c2s4-3m-mel.hosting-services.net.au; Tue, 29 Jul 2014 18:06:52 +1000
+X-Failed-Recipients: walter@bruntech.net.au
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@c2s4-3m-mel.hosting-services.net.au>
+To: bruntnet@c2s4-3m-mel.hosting-services.net.au
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1XC2Qu-002U5q-Rb@c2s4-3m-mel.hosting-services.net.au>
+Date: Tue, 29 Jul 2014 18:06:52 +1000
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  walter@bruntech.net.au
+    No Such User Here
+
+------ This is a copy of the message, including all the headers. ------
+
+Return-path: <bruntnet@c2s4-3m-mel.hosting-services.net.au>
+Received: from bruntnet by c2s4-3m-mel.hosting-services.net.au with local (Exim 4.82)
+	(envelope-from <bruntnet@c2s4-3m-mel.hosting-services.net.au>)
+	id 1XC2Qu-002U5l-P3
+	for walter@bruntech.net.au; Tue, 29 Jul 2014 18:06:52 +1000
+To: walter@bruntech.net.au
+Subject: =?UTF-8?B?UmVtb3ZlZCBJbnN0YWxsYXRpb24gb2YgT3BlbkJpeiBDdWJp?=
+X-PHP-Originating-Script: 0:mail_functions.php
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+From: Your Hosting Provider <noreply@hosting-services.net.au>
+Reply-To: noreply@hosting-services.net.au
+X-Mailer: PHP/5.4.23
+Message-Id: <E1XC2Qu-002U5l-P3@c2s4-3m-mel.hosting-services.net.au>
+Date: Tue, 29 Jul 2014 18:06:52 +1000
+
+An installation of OpenBiz Cubi has been removed. Following were the details of the installation :
+Path : /home/bruntnet/public_html/intranet
+URL : http://bruntech.net.au/intranet
+MySQL Database : bruntnet_intra1
+MySQL DB User : bruntnet_intra1
+MySQL DB Host : localhost
+MySQL DB Password : 7TfP.9S14!
+Time of Installation : July 29, 2014, 5:40 pm
+Time of Removal : July 29, 2014, 6:06 pm
+
+If you wish to unsubscribe from such emails, go to your Control Panel -> APP -> Email Settings
+

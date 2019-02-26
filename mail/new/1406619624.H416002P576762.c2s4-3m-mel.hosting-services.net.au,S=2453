@@ -1,0 +1,59 @@
+Return-path: <>
+Envelope-to: bruntnet@c2s4-3m-mel.hosting-services.net.au
+Delivery-date: Tue, 29 Jul 2014 17:40:24 +1000
+Received: from mailnull by c2s4-3m-mel.hosting-services.net.au with local (Exim 4.82)
+	id 1XC21I-002Q2T-Ab
+	for bruntnet@c2s4-3m-mel.hosting-services.net.au; Tue, 29 Jul 2014 17:40:24 +1000
+X-Failed-Recipients: walter@bruntech.net.au
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@c2s4-3m-mel.hosting-services.net.au>
+To: bruntnet@c2s4-3m-mel.hosting-services.net.au
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1XC21I-002Q2T-Ab@c2s4-3m-mel.hosting-services.net.au>
+Date: Tue, 29 Jul 2014 17:40:24 +1000
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  walter@bruntech.net.au
+    No Such User Here
+
+------ This is a copy of the message, including all the headers. ------
+
+Return-path: <bruntnet@c2s4-3m-mel.hosting-services.net.au>
+Received: from bruntnet by c2s4-3m-mel.hosting-services.net.au with local (Exim 4.82)
+	(envelope-from <bruntnet@c2s4-3m-mel.hosting-services.net.au>)
+	id 1XC21I-002Q2M-89
+	for walter@bruntech.net.au; Tue, 29 Jul 2014 17:40:24 +1000
+To: walter@bruntech.net.au
+Subject: =?UTF-8?B?TmV3IEluc3RhbGxhdGlvbiBvZiBPcGVuQml6IEN1Ymk=?=
+X-PHP-Originating-Script: 0:mail_functions.php
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+From: Your Hosting Provider <noreply@hosting-services.net.au>
+Reply-To: noreply@hosting-services.net.au
+X-Mailer: PHP/5.4.23
+Message-Id: <E1XC21I-002Q2M-89@c2s4-3m-mel.hosting-services.net.au>
+Date: Tue, 29 Jul 2014 17:40:24 +1000
+
+A new installation of OpenBiz Cubi 3.0.9 has been completed. The details of the installation are shown below:
+Path : /home/bruntnet/public_html/intranet
+URL : http://bruntech.net.au/intranet
+Admin URL : http://bruntech.net.au/intranet/index.php/user/login
+Admin Username : Administrad0r
+Admin Password : !@3Bits#21
+Admin Email: walter@bruntech.net.au
+MySQL Database : bruntnet_intra1
+MySQL DB User : bruntnet_intra1
+MySQL DB Host : localhost
+MySQL DB Password : 7TfP.9S14!
+Update Notification : Enabled
+Auto Upgrade : Disabled
+Automated Backups : Once a week
+Backup Rotation : 2
+Time of Installation : July 29, 2014, 5:40 pm
+
+If you wish to unsubscribe from such emails, go to your Control Panel -> APP -> Email Settings
+
