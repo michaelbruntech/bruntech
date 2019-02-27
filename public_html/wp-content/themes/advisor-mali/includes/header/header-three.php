@@ -188,85 +188,68 @@ if ( class_exists( 'Redux' ) ) {
 }
 ?>
 
-    <header id="header" class="h-one-h">
+<header id="header" class="header-three h-three-h">
 
-				<div class="container">
-
-					<!-- TOP BAR -->
-          <?php if ( $enable_top_bar == true ) { ?>
-
-					<div class="top-bar clearfix">
-
-            <?php if ( !empty( $header_tagline ) ) { ?>
-
-						<p><?php echo esc_html( $header_tagline ) ; ?></p>
-
-              <?php } ?>
-
-						<ul>
-              <?php if ( !empty( $header_phone ) ) { ?>
-
-							<li><i class="icon-telephone114"></i>
-                <a class="tel" href="tel:<?php echo esc_attr( $header_phone ); ?>">
-                  <?php echo esc_html( $header_phone_call_us ) ; ?> <?php echo esc_html( $header_phone ) ; ?>
-                </a>
-              </li>
+  <div class="container-fluid">
 
 
-              <?php } ?>
-              <?php if ( !empty( $header_address ) ) { ?>
+      <!-- HEADER INNER -->
+      <div class="header clearfix">
 
-							<li><i class="icon-icons74"></i> <?php echo esc_html( $header_address ) ; ?></li>
+        <?php if( !empty( $logo_url_img ) ) { ?>
 
-              <?php } ?>
-              <?php if ( !empty( $working_days ) || !empty( $header_office ) )  { ?>
+        <a href="<?php echo esc_url( home_url() ); ?>" class="logo"><img src="<?php echo esc_attr( $logo_url_img ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>"></a>
 
-                <?php $working_hours_ofc = $working_days.' '.$header_office; ?>
+        <?php
+        } else { ?>
 
-							<li><i class="icon-icons20"></i><?php echo esc_html( $working_hours_ofc ) ; ?></li>
+          <a href="<?php echo esc_url( home_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
 
-              <?php } ?>
-						</ul>
-            <?php } ?>
-					</div>
-					<!-- / TOP BAR -->
+        <?php } ?>
 
-					<!-- HEADER INNER -->
-					<div class="header clearfix">
+      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-nav" aria-expanded="false">
+      		<span class="sr-only">Toggle navigation</span>
+      		<span class="icon-bar"></span>
+      		<span class="icon-bar"></span>
+      		<span class="icon-bar"></span>
+      	</button>
 
-            <?php if( !empty( $logo_url_img ) ) { ?>
+        <ul class="header-links clearfix">
 
-						<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><img src="<?php echo esc_attr( $logo_url_img ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>"></a>
+          <?php if ( !empty( $header_phone ) ) { ?>
 
-						<?php
-						} else { ?>
+          <li class="header-number"><i class="icon-telephone114"></i>
 
-							<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
+            <a href="tel:<?php echo esc_attr( $header_phone ); ?>">
+              <?php echo esc_html( $header_phone_call_us ) ; ?> <?php echo esc_html( $header_phone ) ; ?>
+            </a>
 
-				 	  <?php } ?>
+          </li>
 
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-nav" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<?php
-						if( $advisor_options['advisor-header-search-icon'] ){
+          <?php } ?>
 
-							locate_template('searchform.php', true);
+          <?php if ( !empty( $working_days ) || !empty( $header_office )   ) { ?>
 
-						}?>
+          <?php $working_hours_ofc = $working_days.' '.$header_office; ?>
+          <li class="header-time"><i class="icon-icons20"></i><?php echo esc_html( $working_hours_ofc ) ; ?></li>
 
-            <nav class="main-nav navbar-collapse collapse" id="primary-nav">
-              <!-- Add Main menu -->
-  						<?php advisor_render_main_menu(); ?>
-            </nav>
+          <?php } ?>
 
-            <?php wp_reset_postdata(); ?>
+          <?php if ( !empty( $get_quote_url ) && !empty( $get_quote_label )  ) { ?>
 
-					</div><!-- / HEADER INNER -->
+          <li><a href="<?php echo esc_url( $get_quote_url ); ?>" class="btn btn-primary btn-quote" data-text="<?php echo esc_attr( $get_quote_label ) ; ?>"><?php echo esc_html( $get_quote_label ) ; ?></a></li>
 
-      </div><!-- / CONTAINER -->
+          <?php } ?>
+        </ul>
 
-</header><!-- / HERDER -->
+        <nav class="main-nav navbar-collapse collapse" id="primary-nav">
+          <!-- Add Main menu -->
+          <?php advisor_render_main_menu(); ?>
+        </nav>
+
+        <?php wp_reset_postdata(); ?>
+      </div><!-- / HEADER INNER -->
+
+    </div><!-- / CONTAINER -->
+
+</header>

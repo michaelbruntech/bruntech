@@ -5,10 +5,6 @@
  * @subpackage Advisor
  * @since Advisor 1.0
  */
- ?>
-<!-- HERDER -->
-
-<?php
 global $advisor_options , $post;
 
 if ( class_exists( 'Redux' ) ) {
@@ -187,86 +183,79 @@ if ( class_exists( 'Redux' ) ) {
 
 }
 ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js">
+	<head>
+	<!-- Basic Page Needs
+	   ================================================== -->
+	 <meta charset="<?php bloginfo( 'charset' ); ?>">
+	 <meta  content="text/html; <?php bloginfo( 'charset' ); ?>">
+	 <!-- Mobile Specific Metas
+	   ================================================== -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<?php wp_head(); ?>
+	<!-- HEADER SCRIPTS -->
+	</head>
+  <body
+	<?php if ( !empty( $advisor_options['advisor-header-layout']) && $advisor_options['advisor-header-layout'] == 'five' ) {
 
-    <header id="header" class="h-one-h">
+		body_class('ad-five');
 
-				<div class="container">
+	} else {
+  	body_class();
 
-					<!-- TOP BAR -->
-          <?php if ( $enable_top_bar == true ) { ?>
+  } ?>>
 
-					<div class="top-bar clearfix">
+		<!-- LOADER -->
+		<?php	if ( $advisor_options['advisor-enable-page-loader'] == true ) { ?>
+			<div id="loader" class="loader">
+				<div class="spinner">
+				  <div class="double-bounce1"></div>
+				  <div class="double-bounce2"></div>
+				</div>
+			</div>
+		<?php } ?>
+     <?php if( $header_style == 'one' ){
 
-            <?php if ( !empty( $header_tagline ) ) { ?>
+			 get_template_part('includes/header/header','one');
 
-						<p><?php echo esc_html( $header_tagline ) ; ?></p>
+		 } else if ( $header_style == 'two' ) {
 
-              <?php } ?>
+			  get_template_part('includes/header/header','two');
 
-						<ul>
-              <?php if ( !empty( $header_phone ) ) { ?>
+		 } else if ( $header_style == 'three') {
 
-							<li><i class="icon-telephone114"></i>
-                <a class="tel" href="tel:<?php echo esc_attr( $header_phone ); ?>">
-                  <?php echo esc_html( $header_phone_call_us ) ; ?> <?php echo esc_html( $header_phone ) ; ?>
-                </a>
-              </li>
+			 get_template_part('includes/header/header','three');
 
+		 } else if ( $header_style == 'four') {
 
-              <?php } ?>
-              <?php if ( !empty( $header_address ) ) { ?>
+			  get_template_part('includes/header/header','four');
 
-							<li><i class="icon-icons74"></i> <?php echo esc_html( $header_address ) ; ?></li>
+		 } else if ( $header_style == 'five') {
 
-              <?php } ?>
-              <?php if ( !empty( $working_days ) || !empty( $header_office ) )  { ?>
+			 get_template_part('includes/header/header','five');
 
-                <?php $working_hours_ofc = $working_days.' '.$header_office; ?>
+		 } else if ( $header_style == 'six') {
 
-							<li><i class="icon-icons20"></i><?php echo esc_html( $working_hours_ofc ) ; ?></li>
+			   get_template_part('includes/header/header','six');
 
-              <?php } ?>
-						</ul>
-            <?php } ?>
-					</div>
-					<!-- / TOP BAR -->
+		 } else if ( $header_style == 'seven') {
 
-					<!-- HEADER INNER -->
-					<div class="header clearfix">
+			 get_template_part('includes/header/header','seven');
 
-            <?php if( !empty( $logo_url_img ) ) { ?>
+		 } else if ( $header_style == 'eight') {
 
-						<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><img src="<?php echo esc_attr( $logo_url_img ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>"></a>
+			  get_template_part('includes/header/header','eight');
 
-						<?php
-						} else { ?>
+		 }  else if ( $header_style == 'nine') {
 
-							<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
+			 get_template_part('includes/header/header','nine');
 
-				 	  <?php } ?>
+		 } else {
 
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-nav" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<?php
-						if( $advisor_options['advisor-header-search-icon'] ){
+			 	 get_template_part('includes/header/header','one');
 
-							locate_template('searchform.php', true);
-
-						}?>
-
-            <nav class="main-nav navbar-collapse collapse" id="primary-nav">
-              <!-- Add Main menu -->
-  						<?php advisor_render_main_menu(); ?>
-            </nav>
-
-            <?php wp_reset_postdata(); ?>
-
-					</div><!-- / HEADER INNER -->
-
-      </div><!-- / CONTAINER -->
-
-</header><!-- / HERDER -->
+		 }
+		 ?>
+<!-- HERDER -->

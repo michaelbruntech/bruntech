@@ -100,8 +100,8 @@ aside .testimonial-content{ background-image:url(../images/color-scheme/green/te
 .cases-item figcaption{ background:rgba(9,162,35,0.80);}
 
 
-#header .top-bar:after, #header .top-bar{ background:#3a2c5f;}
-#header .top-bar:before, #header .top-bar p, #header .top-bar p:after{ background:#483a6d;}
+#header .top-bar:after, #header .top-bar{ background:#91C046;} /* original: #3a2c5f */
+#header .top-bar:before, #header .top-bar p, #header .top-bar p:after{ background:#91C046;} /* original: #483a6d */
 #header.header-two .main-nav{ background:#3a2c5f}
 .smallHeader.active #header.header-two{ background:#3a2c5f !important;}
 

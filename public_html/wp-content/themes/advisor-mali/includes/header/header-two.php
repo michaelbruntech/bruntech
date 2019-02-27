@@ -188,60 +188,65 @@ if ( class_exists( 'Redux' ) ) {
 }
 ?>
 
-    <header id="header" class="h-one-h">
+    <header id="header" class="header-two h-two-h">
 
-				<div class="container">
+				<!-- TOP BAR -->
 
-					<!-- TOP BAR -->
-          <?php if ( $enable_top_bar == true ) { ?>
+        <?php if ( $enable_top_bar == true ) { ?>
 
-					<div class="top-bar clearfix">
-
+				<div class="top-bar-simple clearfix">
+					<div class="container">
             <?php if ( !empty( $header_tagline ) ) { ?>
 
 						<p><?php echo esc_html( $header_tagline ) ; ?></p>
 
-              <?php } ?>
-
-						<ul>
-              <?php if ( !empty( $header_phone ) ) { ?>
-
-							<li><i class="icon-telephone114"></i>
-                <a class="tel" href="tel:<?php echo esc_attr( $header_phone ); ?>">
-                  <?php echo esc_html( $header_phone_call_us ) ; ?> <?php echo esc_html( $header_phone ) ; ?>
-                </a>
-              </li>
-
-
-              <?php } ?>
-              <?php if ( !empty( $header_address ) ) { ?>
-
-							<li><i class="icon-icons74"></i> <?php echo esc_html( $header_address ) ; ?></li>
-
-              <?php } ?>
-              <?php if ( !empty( $working_days ) || !empty( $header_office ) )  { ?>
-
-                <?php $working_hours_ofc = $working_days.' '.$header_office; ?>
-
-							<li><i class="icon-icons20"></i><?php echo esc_html( $working_hours_ofc ) ; ?></li>
-
-              <?php } ?>
-						</ul>
             <?php } ?>
+						<ul class="social">
+							<?php if ( !empty( $advisor_options['advisor-facebook-url']) ) { ?>
+
+								<li><a href="<?php echo esc_url( $advisor_options['advisor-facebook-url'] ); ?>" class="facebook"><i class="icon-facebook-1"></i></a></li>
+
+							<?php } ?>
+							<?php if ( !empty( $advisor_options['advisor-twitter-url'] ) ) { ?>
+
+								<li><a href="<?php echo esc_url( $advisor_options['advisor-twitter-url'] ); ?>" class="twitter"><i class="icon-twitter-1"></i></a></li>
+
+							<?php } ?>
+							<?php if ( !empty( $advisor_options['advisor-google-url'] ) ) { ?>
+
+								<li><a href="<?php echo esc_url( $advisor_options['advisor-google-url'] ); ?>" class="google-plus"><i class="icon-google"></i></a></li>
+
+								<?php } ?>
+							<?php if ( !empty( $advisor_options['advisor-linkedin-url'] ) ) { ?>
+
+								<li><a href="<?php echo esc_url( $advisor_options['advisor-linkedin-url'] ); ?>" class="linkedin"><i class="icon-linkedin3"></i></a></li>
+
+								<?php } ?>
+								<?php if ( !empty( $advisor_options['advisor-instagram-url'] ) ) { ?>
+
+									<li><a href="<?php echo esc_url( $advisor_options['advisor-instagram-url'] ); ?>" class="instagram"><i class="icon-instagram"></i></a></li>
+
+								<?php } ?>
+						</ul>
 					</div>
-					<!-- / TOP BAR -->
+				</div>
+        <?php } ?>
+				<!-- / TOP BAR -->
+
+
+				<div class="container">
 
 					<!-- HEADER INNER -->
 					<div class="header clearfix">
 
-            <?php if( !empty( $logo_url_img ) ) { ?>
+						<?php if( !empty( $logo_url_img ) ) { ?>
 
-						<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><img src="<?php echo esc_attr( $logo_url_img ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>"></a>
+						<a href="<?php echo esc_url( home_url() ); ?>" class="logo"><img src="<?php echo esc_attr( $logo_url_img ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>"></a>
 
 						<?php
 						} else { ?>
 
-							<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
+							<a href="<?php echo esc_url( home_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
 
 				 	  <?php } ?>
 
@@ -251,22 +256,47 @@ if ( class_exists( 'Redux' ) ) {
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
+
 						<?php
 						if( $advisor_options['advisor-header-search-icon'] ){
 
 							locate_template('searchform.php', true);
 
-						}?>
+						}
+						?>
+						<ul class="header-contact-widget clearfix">
 
-            <nav class="main-nav navbar-collapse collapse" id="primary-nav">
-              <!-- Add Main menu -->
-  						<?php advisor_render_main_menu(); ?>
-            </nav>
-
-            <?php wp_reset_postdata(); ?>
-
+							<?php if ( !empty( $header_phone ) ) { ?>
+								<li>
+									<i class="icon-telephone114"></i>
+									<p>
+                    <a class="tel" href="tel:<?php echo esc_attr( $header_phone ); ?>">
+                      <?php echo esc_html( $header_phone_call_us ) ; ?> <?php echo esc_html( $header_phone ) ; ?>
+                    </a>
+                    <a href="mailto:<?php echo $header_email; ?>"><?php echo $header_email; ?></a></p>
+								</li>
+							<?php } ?>
+							<?php if ( !empty( $header_company ) || !empty( $header_address )  ) { ?>
+							<li>
+								<i class="icon-icons74"></i>
+								<p><?php echo esc_html( $header_company ); ?><span><?php echo esc_html( $header_address ); ?></span></p>
+							</li>
+							<?php } ?>
+							<?php if ( !empty( $header_office ) || !empty( $working_days )  ) { ?>
+							<li>
+								<i class="icon-icons20"></i>
+								<p><?php echo esc_html( $header_office ); ?><span><?php echo esc_html( $working_days ); ?></span></p>
+							</li>
+							<?php } ?>
+						</ul>
 					</div><!-- / HEADER INNER -->
 
+          <nav class="main-nav navbar-collapse collapse" id="primary-nav">
+            <!-- Add Main menu -->
+            <?php advisor_render_main_menu(); ?>
+          </nav>
+
+					<?php wp_reset_postdata(); ?>
       </div><!-- / CONTAINER -->
 
-</header><!-- / HERDER -->
+  </header><!-- / HERDER -->

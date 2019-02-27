@@ -188,85 +188,115 @@ if ( class_exists( 'Redux' ) ) {
 }
 ?>
 
-    <header id="header" class="h-one-h">
+  	<header id="header" class="header-four h-four-h">
 
-				<div class="container">
+      <?php if ( $enable_top_bar == true ) { ?>
 
-					<!-- TOP BAR -->
-          <?php if ( $enable_top_bar == true ) { ?>
+  		  <div class="ad-topbar">
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-xs-12 col-sm-12">
+              <?php if ( !empty( $header_tagline ) ) { ?>
 
-					<div class="top-bar clearfix">
-
-            <?php if ( !empty( $header_tagline ) ) { ?>
-
-						<p><?php echo esc_html( $header_tagline ) ; ?></p>
-
-              <?php } ?>
-
-						<ul>
-              <?php if ( !empty( $header_phone ) ) { ?>
-
-							<li><i class="icon-telephone114"></i>
-                <a class="tel" href="tel:<?php echo esc_attr( $header_phone ); ?>">
-                  <?php echo esc_html( $header_phone_call_us ) ; ?> <?php echo esc_html( $header_phone ) ; ?>
-                </a>
-              </li>
-
+  						<span class="ad-note"><?php echo esc_html( $header_tagline ) ; ?></span>
 
               <?php } ?>
-              <?php if ( !empty( $header_address ) ) { ?>
+  						<div class="ad-rightbox">
 
-							<li><i class="icon-icons74"></i> <?php echo esc_html( $header_address ) ; ?></li>
+  							<ul class="ad-contactinfo">
+                  <?php if ( !empty( $header_address )  )  { ?>
+  								<li>
+  									<i class="icon-icons74"></i>
+  									<span><?php echo esc_html( $header_address ) ; ?></span>
+  								</li>
+                  <?php } ?>
+                  <?php if ( !empty( $working_days ) || !empty( $header_office ) )  { ?>
 
-              <?php } ?>
-              <?php if ( !empty( $working_days ) || !empty( $header_office ) )  { ?>
+                    <?php $working_hours_ofc = $working_days.' '.$header_office; ?>
 
-                <?php $working_hours_ofc = $working_days.' '.$header_office; ?>
+                  <li><i class="icon-icons20"></i><?php echo esc_html( $working_hours_ofc ) ; ?></li>
 
-							<li><i class="icon-icons20"></i><?php echo esc_html( $working_hours_ofc ) ; ?></li>
+                  <?php } ?>
+  							</ul>
 
-              <?php } ?>
-						</ul>
+  							<ul class="ad-socialicons">
+                  <?php if ( !empty( $advisor_options['advisor-facebook-url']) ) { ?>
+
+    								<li><a href="<?php echo esc_url( $advisor_options['advisor-facebook-url'] ); ?>"><i class="icon-facebook-1"></i></a></li>
+
+    							<?php } ?>
+    							<?php if ( !empty( $advisor_options['advisor-twitter-url'] ) ) { ?>
+
+    								<li><a href="<?php echo esc_url( $advisor_options['advisor-twitter-url'] ); ?>"><i class="icon-twitter-1"></i></a></li>
+
+    							<?php } ?>
+    							<?php if ( !empty( $advisor_options['advisor-google-url'] ) ) { ?>
+
+    								<li><a href="<?php echo esc_url( $advisor_options['advisor-google-url'] ); ?>"><i class="icon-google"></i></a></li>
+
+    								<?php } ?>
+    							<?php if ( !empty( $advisor_options['advisor-linkedin-url'] ) ) { ?>
+
+    								<li><a href="<?php echo esc_url( $advisor_options['advisor-linkedin-url'] ); ?>"><i class="icon-linkedin3"></i></a></li>
+
+    								<?php } ?>
+    								<?php if ( !empty( $advisor_options['advisor-instagram-url'] ) ) { ?>
+
+    									<li><a href="<?php echo esc_url( $advisor_options['advisor-instagram-url'] ); ?>"><i class="icon-instagram"></i></a></li>
+
+    								<?php } ?>
+  							</ul>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+
+      <?php } ?>
+  		<div class="ad-navigation">
+  			<div class="container">
+          <?php if( !empty( $logo_url_img ) ) { ?>
+
+          <a href="<?php echo esc_url( site_url() ); ?>" class="logo"><img src="<?php echo esc_attr( $logo_url_img ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>"></a>
+
+          <?php
+          } else { ?>
+
+            <a href="<?php echo esc_url( site_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
+
+          <?php } ?>
+          <?php if ( !empty( $header_phone )  ) { ?>
+  				<span class="ad-number">
+
+            <?php if ( !empty( $header_phone_label )  ) { ?>
+
+  					<em><?php echo esc_html( $header_phone_label ); ?></em>
+
             <?php } ?>
-					</div>
-					<!-- / TOP BAR -->
+  					<span><a href="tel:<?php echo esc_attr( $header_phone ); ?>"><?php echo esc_html( $header_phone_call_us ) ; ?> <?php echo $header_phone; ?></a></span>
 
-					<!-- HEADER INNER -->
-					<div class="header clearfix">
+  				</span>
 
-            <?php if( !empty( $logo_url_img ) ) { ?>
-
-						<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><img src="<?php echo esc_attr( $logo_url_img ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>"></a>
-
-						<?php
-						} else { ?>
-
-							<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
-
-				 	  <?php } ?>
-
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-nav" aria-expanded="false">
+          <?php } ?>
+          <nav class="header clearfix">
+					<div class="navbar-header">
+						<button type="button" class="ad-btnnav navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<?php
-						if( $advisor_options['advisor-header-search-icon'] ){
+					</div>
 
-							locate_template('searchform.php', true);
+          <div class="main-nav navbar-collapse collapse tg-navigation" id="tg-navigation">
+            <!-- Add Main menu -->
+            <?php advisor_render_main_menu(); ?>
+          </nav>
 
-						}?>
+          <?php wp_reset_postdata(); ?>
 
-            <nav class="main-nav navbar-collapse collapse" id="primary-nav">
-              <!-- Add Main menu -->
-  						<?php advisor_render_main_menu(); ?>
-            </nav>
-
-            <?php wp_reset_postdata(); ?>
-
-					</div><!-- / HEADER INNER -->
-
-      </div><!-- / CONTAINER -->
-
-</header><!-- / HERDER -->
+				</nav>
+			</div>
+		</div>
+	</header>
+  	<!-- / HERDER -->

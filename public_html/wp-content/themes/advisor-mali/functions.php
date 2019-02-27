@@ -1206,4 +1206,8 @@ delete_option( 'advisor-custom-css' );
 
 }
 add_action('wp_head','advisor_footer_css');
+
+
+/* Remove admin bar */
+show_admin_bar(false)
 ?>

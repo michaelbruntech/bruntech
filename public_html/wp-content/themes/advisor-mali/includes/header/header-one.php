@@ -174,7 +174,7 @@ if ( class_exists( 'Redux' ) ) {
 	$logo_url_img = '';
 	$header_email = esc_html__('support@brighthemes.com' , 'advisor' );
 	$header_tagline = esc_html__('We have over 15 years of experience' , 'advisor' );
-	$header_phone = esc_html__( '+92123456796' , 'advisor' );
+	$header_phone = esc_html__( '1300 722 544' , 'advisor' ); // original: +92123456796
 	$header_address = esc_html__('786 South Park Avenue' , 'advisor' );
 	$header_company = esc_html__('Manhattan Hall,' , 'advisor' );
 	$working_days = esc_html__('Mon to Fri' , 'advisor' );
@@ -241,7 +241,11 @@ if ( class_exists( 'Redux' ) ) {
 						<?php
 						} else { ?>
 
-							<a href="<?php echo esc_url( site_url() ); ?>" class="logo"><?php echo get_bloginfo('description'); ?></a>
+                            <!-- code_edited -->
+							<a href="<?php echo esc_url( site_url() ); ?>" class="logo">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/site-icon.png">
+                                <?php echo get_bloginfo('description'); ?>
+                            </a>
 
 				 	  <?php } ?>
 
